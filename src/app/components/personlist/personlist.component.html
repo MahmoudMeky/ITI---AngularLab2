@@ -1,0 +1,13 @@
+<h4>Persons:</h4>
+<div>
+  <app-person *ngFor="let user of personList">
+    <h4 class="name"> {{ user.name }}</h4>
+    <h4 class="age" #age>{{ user.age }}</h4>
+    <h4 class="country" #country>{{ user.country }}</h4>
+  </app-person>
+</div>
+
+<div #textplaceholder>
+    Old Text
+</div>
+<input type="button" value="Click Here" (click)="changeText('Text Changed !!!')">
