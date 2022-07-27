@@ -1,0 +1,17 @@
+<main class="d-flex flex-column p-5">
+  <input type="text" style="margin-bottom: 20px" #input />
+  <ul>
+    <li
+      *ngFor="
+        let product of allProducts | filter: 'clothing':['title', 'category']
+      "
+      style="list-style-type: none"
+      [appColors]="'green'"
+    >
+      {{ product.id }} : {{ product.title }}
+      <br />
+      {{ product.category }}
+    </li>
+  </ul>
+</main>
+<router-outlet></router-outlet>
