@@ -1,6 +1,7 @@
 import { Product } from '../../_interfaces/product';
 import { ProductService } from '../../_services/product.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-product-list',
@@ -18,7 +19,7 @@ export class ProductListComponent implements OnInit {
   @Output() getFavProduct: EventEmitter<Product> = new EventEmitter();
 
 
-  constructor(private ProductService: ProductService) { }
+  constructor(private ProductService: ProductService, private location: Location) { }
 
   ngOnInit(): void {
 
@@ -43,4 +44,10 @@ export class ProductListComponent implements OnInit {
   // passFavProductToParent() {
   //   this.getFavProduct.emit(this.favProduct)
   // }
+
+  goToUsers() {
+    this.location.back()
+
+  }
 }
+

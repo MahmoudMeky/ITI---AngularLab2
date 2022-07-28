@@ -1,12 +1,15 @@
 <main class="d-flex flex-wrap p-4">
   <div class="col-9 gap-4 d-flex flex-column" (getFavProduct)="($event)">
-    <input
-      type="search"
-      class="form-control w-50"
-      placeholder="Search.."
-      [(ngModel)]="searchText"
-      style="height: 39px"
-    />
+    <div class="d-flex gap-5">
+      <input
+        type="search"
+        class="form-control w-50"
+        placeholder="Search.."
+        [(ngModel)]="searchText"
+        style="height: 39px"
+      />
+      <button class="btn btn-success">Users</button>
+    </div>
 
     <div
       class="d-flex justify-items-center align-items-center gap-1"

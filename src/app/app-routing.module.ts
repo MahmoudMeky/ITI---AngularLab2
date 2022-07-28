@@ -8,7 +8,8 @@ import { ProductListComponent } from './Routes/product-list/product-list.compone
 const routes: Routes = [{ path: 'product/:id', component: ProductDetailsComponent },
 { path: 'users', component: UsersComponent },
 { path: 'users/:id', component: UserdetailsComponent },
-{ path: '', component: ProductListComponent },
+{ path: 'productlist', component: ProductListComponent },
+{ path: "", redirectTo: "productlist", pathMatch: "full" },
 { path: '**', component: ProductListComponent }];
 
 @NgModule({
