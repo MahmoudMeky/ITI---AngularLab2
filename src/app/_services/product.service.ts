@@ -266,6 +266,9 @@ export class ProductService {
     return this.allProducts;
   }
 
+  getProductByID(id: number) {
+    return this.allProducts.find(el => el.id == id)
+  }
   addToCart(product: Product) {
     this.cartProducts.push(product)
     this.cartItems.next(this.cartProducts)
