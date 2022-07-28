@@ -1,7 +1,7 @@
+import { Router } from '@angular/router';
 import { Product } from '../../_interfaces/product';
 import { ProductService } from '../../_services/product.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-product-list',
@@ -19,7 +19,7 @@ export class ProductListComponent implements OnInit {
   @Output() getFavProduct: EventEmitter<Product> = new EventEmitter();
 
 
-  constructor(private ProductService: ProductService, private location: Location) { }
+  constructor(private ProductService: ProductService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -45,9 +45,12 @@ export class ProductListComponent implements OnInit {
   //   this.getFavProduct.emit(this.favProduct)
   // }
 
-  goToUsers() {
-    this.location.back()
-
+  goLogin() {
+    this.router.navigate(["/login"])
+  }
+  goAddProduct() {
+    this.router.navigate(["/addproduct"])
+    console.log(this.products[1])
   }
 }
 

@@ -1,6 +1,6 @@
 <main class="d-flex flex-wrap p-4">
   <div class="col-9 gap-4 d-flex flex-column" (getFavProduct)="($event)">
-    <div class="d-flex gap-5">
+    <div class="d-flex gap-2">
       <input
         type="search"
         class="form-control w-50"
@@ -8,7 +8,10 @@
         [(ngModel)]="searchText"
         style="height: 39px"
       />
-      <button class="btn btn-success">Users</button>
+      <button class="btn btn-success" (click)="goLogin()">Login</button>
+      <button class="btn btn-info text-white" (click)="goAddProduct()">
+        Add Product
+      </button>
     </div>
 
     <div

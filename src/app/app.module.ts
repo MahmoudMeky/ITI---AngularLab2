@@ -1,4 +1,4 @@
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -15,7 +15,9 @@ import { RepeatDirective } from './_directives/repeat.directive';
 import { ProductDetailsComponent } from './Routes/product-details/product-details.component';
 import { HttpClientModule } from "@angular/common/http";
 import { UsersComponent } from './Routes/users/users.component';
-import { UserdetailsComponent } from './Routes/userdetails/userdetails.component'
+import { UserdetailsComponent } from './Routes/userdetails/userdetails.component';
+import { LoginFormComponent } from './forms/login-form/login-form.component';
+import { AddProductComponent } from './forms/add-product/add-product.component'
 
 
 
@@ -33,12 +35,15 @@ import { UserdetailsComponent } from './Routes/userdetails/userdetails.component
     ProductDetailsComponent,
     UsersComponent,
     UserdetailsComponent,
+    LoginFormComponent,
+    AddProductComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

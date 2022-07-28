@@ -269,6 +269,11 @@ export class ProductService {
   getProductByID(id: number) {
     return this.allProducts.find(el => el.id == id)
   }
+  addProduct(product: any) {
+    let newId = this.allProducts[this.allProducts.length - 1].id + 1
+    this.allProducts.unshift({ ...product, id: newId });
+  }
+
   addToCart(product: Product) {
     this.cartProducts.push(product)
     this.cartItems.next(this.cartProducts)
